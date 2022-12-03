@@ -2,8 +2,10 @@ package com.kodlamaio.lawfirmAOP.aspects;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 @Aspect
@@ -30,8 +32,8 @@ public class AspectManager {
         log.info("Annotation based before method called for Class: "+bean.getClass().getSimpleName()
                 +" and Method: "+joinPoint.getSignature());
     }
-    @Around("loggingPointCut()")
-    public void arround(ProceedingJoinPoint joinPoint){
-        log.info("Arround method called: "+joinPoint.getSignature());
-    }
+   /* @Around("loggingPointCut()")
+    public void around(ProceedingJoinPoint joinPoint){
+        log.info("Around method called: "+joinPoint.getSignature());
+    }*/
 }
