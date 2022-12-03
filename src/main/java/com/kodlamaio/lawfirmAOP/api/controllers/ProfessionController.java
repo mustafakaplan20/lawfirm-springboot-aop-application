@@ -1,5 +1,6 @@
 package com.kodlamaio.lawfirmAOP.api.controllers;
 
+import com.kodlamaio.lawfirmAOP.annotations.ProfessionAnnotation;
 import com.kodlamaio.lawfirmAOP.business.abstracts.ProfessionService;
 import com.kodlamaio.lawfirmAOP.business.requests.CreateProfessionRequest;
 import com.kodlamaio.lawfirmAOP.business.responses.CreateProfessionResponse;
@@ -16,11 +17,13 @@ public class ProfessionController {
     ProfessionService service;
 
     @GetMapping
+    @ProfessionAnnotation
     public List<GetProfessionResponse> getAll(){
         return service.getAll();
 
     }
     @PostMapping
+    @ProfessionAnnotation
     CreateProfessionResponse add(@RequestBody CreateProfessionRequest createProfessionRequest){
         return service.add(createProfessionRequest);
 

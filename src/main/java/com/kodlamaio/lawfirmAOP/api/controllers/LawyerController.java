@@ -1,5 +1,6 @@
 package com.kodlamaio.lawfirmAOP.api.controllers;
 
+import com.kodlamaio.lawfirmAOP.annotations.LawyerAnnotation;
 import com.kodlamaio.lawfirmAOP.business.abstracts.LawyerService;
 import com.kodlamaio.lawfirmAOP.business.requests.CreateLawyerRequest;
 import com.kodlamaio.lawfirmAOP.business.responses.CreateLawyerResponse;
@@ -16,10 +17,12 @@ public class LawyerController {
     LawyerService service;
 
     @GetMapping
+    @LawyerAnnotation
     public List<GetLawyerResponse> getAll(){
         return service.getAll();
     }
     @PostMapping
+    @LawyerAnnotation
     public CreateLawyerResponse add(@RequestBody CreateLawyerRequest createLawyerRequest) {
         return service.add(createLawyerRequest);
     }
