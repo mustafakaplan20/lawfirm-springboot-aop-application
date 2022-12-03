@@ -32,6 +32,7 @@ public class AspectManager {
         log.info("Annotation based before method called for Class: "+bean.getClass().getSimpleName()
                 +" and Method: "+joinPoint.getSignature());
     }
+    //It is commented because of forcing the other methods and only works itself when HTTP requests sent!
    /* @Around("loggingPointCut()")
     public void around(ProceedingJoinPoint joinPoint){
         log.info("Around method called: "+joinPoint.getSignature());
